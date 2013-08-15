@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+   uebung: MyString
+  trainingsart: MyString
+  anzset: 1
+  anzwdh: 1
+  beschreibung: MyText
+
+two:
+   uebung: MyString
+  trainingsart: MyString
+  anzset: 1
+  anzwdh: 1
+  beschreibung: MyText

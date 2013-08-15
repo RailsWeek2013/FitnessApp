@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong> uebung:</strong>
+  <%= @uebung.uebung %>
+</p>
+
+<p>
+  <strong>Trainingsart:</strong>
+  <%= @uebung.trainingsart %>
+</p>
+
+<p>
+  <strong>Anzset:</strong>
+  <%= @uebung.anzset %>
+</p>
+
+<p>
+  <strong>Anzwdh:</strong>
+  <%= @uebung.anzwdh %>
+</p>
+
+<p>
+  <strong>Beschreibung:</strong>
+  <%= @uebung.beschreibung %>
+</p>
+
+<%= link_to 'Edit', edit_uebung_path(@uebung) %> |
+<%= link_to 'Back', uebungs_path %>
