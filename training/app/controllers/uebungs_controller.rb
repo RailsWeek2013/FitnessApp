@@ -1,7 +1,6 @@
 class UebungsController < ApplicationController
-  before_filter :authenticate_user!
   before_action :set_uebung, only: [:show, :edit, :update, :destroy]
-  #before_filter :authenticate_user!
+
   # GET /uebungs
   # GET /uebungs.json
   def index
