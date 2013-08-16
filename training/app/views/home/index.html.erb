@@ -1,1 +1,39 @@
-hallo
+
+<%= link_to 'Übung erstellen', new_uebung_path %>
+
+
+
+
+
+
+
+
+<%= check_box_tag(:pet_cat) %>
+<%= label_tag(:pet_cat, "I own a cat") %><br \>
+
+
+
+
+
+
+
+
+
+
+
+
+<%= text_area_tag(:message, "Hi, nice site", size: "24x6") %><br \>
+<%= password_field_tag(:password) %><br \>
+<%= hidden_field_tag(:parent_id, "5") %><br \>
+<%= search_field(:user, :name) %><br \>
+<%= telephone_field(:user, :phone) %><br \>
+<%= date_field(:user, :born_on) %><br \>
+<%= datetime_field(:user, :meeting_time) %><br \>
+<%= datetime_local_field(:user, :graduation_day) %><br \>
+<%= month_field(:user, :birthday_month) %><br \>
+<%= week_field(:user, :birthday_week) %><br \>
+<%= url_field(:user, :homepage) %><br \>
+<%= email_field(:user, :address) %><br \>
+<%= color_field(:user, :favorite_color) %><br \>
+<%= time_field(:task, :started_at) %><br \>
+

@@ -1,5 +1,15 @@
 <h1>Liste der Übungen</h1>
 
+<% i = 1 %>
+<% while i < Uebung.count+1 %>
+<%= check_box_tag(:uebung) %>
+<%= label_tag(:uebung, Uebung.find(i).uebung) %>
+<%= link_to 'zur Übung', uebungs_path%>
+<% i += 1 %>
+<br \>
+<% end %>
+
+
 <table>
   <thead>
     <tr>
@@ -34,3 +44,4 @@
 
 <%= link_to 'New Uebung', new_uebung_path %>
 <%= link_to 'Ausloggen', destroy_user_session_path, method: :delete %>
+<%#= label_tag(:uebung, Uebung.all.map(& :uebung).join) %><br \>
