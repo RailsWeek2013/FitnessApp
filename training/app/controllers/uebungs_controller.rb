@@ -1,4 +1,5 @@
 class UebungsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_uebung, only: [:show, :edit, :update, :destroy]
 
   # GET /uebungs
