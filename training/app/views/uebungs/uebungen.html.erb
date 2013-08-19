@@ -1,0 +1,29 @@
+<h1>Liste der Übungen</h1>
+<ul>
+<%= form_for(:workoutplans) do |u|%>
+	<% @uebungs.each do |uebung| %>
+		<%= u.check_box :uebung %>
+		<%= u.label(:uebung, uebung.uebung) %>
+		<%= link_to 'zur Übung', uebung %>
+		<br \>
+	<% end %>
+  <div><%= u.submit 'Save' %></div>
+<% end -%>
+</ul>
+<%= link_to 'Eigene Übung anlegen', new_uebung_path %>
+<%= link_to 'Meine Übungen', workoutplans_path%>
+<%= link_to 'Ausloggen', destroy_user_session_path, method: :delete %>
+
+
+<%# form_for :uebung, @uebung,
+            :url => uebung_path(@uebung),
+:html => { :method => :put, :class => "edit_employee",
+:id => "edit_employee_1" } do |f| %>
+     <%# @uebungs.each do |uebung| %>
+		<%#= f.check_box :uebung %>
+		<%#= f.label(:uebung, uebung.uebung) %>
+		<%#= link_to 'zur Übung', uebung %>
+		<br \>
+		<%# end %>
+	<div><%#= f.submit 'Save' %></div>
+<%# end %>

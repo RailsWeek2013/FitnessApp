@@ -4,6 +4,7 @@ class HomeController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   
 def index
+	@uebungs = Uebung.all
 end
 
 end

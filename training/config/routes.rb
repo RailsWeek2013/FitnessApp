@@ -1,11 +1,14 @@
 Training::Application.routes.draw do
-  get "workoutplans/excerciseconfiguration"
+  get "uebungs/uebungen"
+  post "uebungs/uebungen"
+  get "workoutplans/edit"
   devise_for :users, :path => "auth", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
   resources :uebungs
   resources :home
   resources :workoutplans
 
-  root to: "uebungs#new"
+
+  root to: "workoutplans#index"
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

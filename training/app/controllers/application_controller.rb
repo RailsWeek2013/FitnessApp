@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+	#include Devise::Controllers::Helpers
   before_filter :authenticate_user!
   before_filter :configure_permitted_parameters, if: :devise_controller?
   # Prevent CSRF attacks by raising an exception.
@@ -11,5 +12,14 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:username, :email) }
   end
+
+  #private
+
+  #def current_user
+  #    if session[:user_id]
+  #      @current_user ||= User.find(session[:user_id])
+ #     end
+  #end
+  #helper_method :current_user
 
 end

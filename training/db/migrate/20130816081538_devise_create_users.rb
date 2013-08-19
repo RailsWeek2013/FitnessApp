@@ -43,4 +43,9 @@ class DeviseCreateUsers < ActiveRecord::Migration
     # add_index :users, :unlock_token,         :unique => true
     # add_index :users, :authentication_token, :unique => true
   end
+
+    # Inside your controllers and views
+    #user_signed_in?
+    #current_user
+    #user_session
 end

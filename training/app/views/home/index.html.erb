@@ -1,6 +1,12 @@
 
 <%= link_to 'Übung erstellen', new_uebung_path %>
+<% @uebungs.each do |uebung| %>
+<%=check_box_tag(:uebung) %>
+<%= label_tag(:uebung, uebung.uebung) %>
+<%= link_to 'zur Übung', uebung%>
+<br \>
 
+<% end %>
 
 
 

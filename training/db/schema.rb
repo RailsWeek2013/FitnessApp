@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130816081538) do
+ActiveRecord::Schema.define(version: 20130818204319) do
 
   create_table "uebungs", force: true do |t|
     t.string   "uebung"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 20130816081538) do
     t.integer  "anzset"
     t.integer  "anzwdh"
     t.text     "beschreibung"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.boolean  "auswaehlen"
+  end
+
+  create_table "user_uebungs", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

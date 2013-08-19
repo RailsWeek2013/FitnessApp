@@ -6,8 +6,12 @@ class UebungsController < ApplicationController
   # GET /uebungs.json
   def index
     @uebungs = Uebung.all
+    #@uebung = current_user.uebungs.find(params[:id])
   end
 
+  def uebungen
+    @uebungs = Uebung.all
+  end
   # GET /uebungs/1
   # GET /uebungs/1.json
   def show
@@ -16,7 +20,7 @@ class UebungsController < ApplicationController
 
   # GET /uebungs/new
   def new
-    @uebung = Uebung.new
+    @uebung = current_user.uebungs.new
   end
 
   # GET /uebungs/1/edit
@@ -27,7 +31,7 @@ class UebungsController < ApplicationController
   # POST /uebungs
   # POST /uebungs.json
   def create
-    @uebung = Uebung.new(uebung_params)
+    @uebung = current_user.uebungs.new(uebung_params)
 
     respond_to do |format|
       if @uebung.save
