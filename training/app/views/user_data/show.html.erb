@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @user_datum.firstname %>
+</p>
+
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @user_datum.lastname %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @user_datum.sex %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @user_datum.weight %>
+</p>
+
+<p>
+  <strong>Bodysize:</strong>
+  <%= @user_datum.bodysize %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @user_datum.birthday %>
+</p>
+
+<%= link_to 'Edit', edit_user_datum_path(@user_datum) %> |
+<%= link_to 'Back', user_data_path %>

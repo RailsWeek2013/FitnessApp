@@ -1,4 +1,8 @@
 Training::Application.routes.draw do
+  resources :user_data
+
+  get "user_datas/data_view"
+  get "user_data/user_data_view"
   get "uebungs/uebungen"
   post "uebungs/uebungen"
   get "workoutplans/edit"

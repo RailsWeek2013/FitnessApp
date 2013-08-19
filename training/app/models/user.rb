@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 	has_many :uebungs
+	has_one :user_datum
+	#accepts_nested_attributes_for :user_data
 	#has_many :user_uebungs
 	#has_many :uebungs, :through => :user_uebungs
   # Include default devise modules. Others available are:

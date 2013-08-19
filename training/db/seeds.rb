@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Uebung.create(:uebung => "A" , :trainingsart => "Kraft")
+Uebung.create(:uebung => "B" , :trainingsart => "Ausdauer")
