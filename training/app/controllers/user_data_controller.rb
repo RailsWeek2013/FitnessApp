@@ -73,6 +73,6 @@ class UserDataController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_datum_params
-      params.require(:user_datum).permit(:firstname, :lastname, :sex, :weight, :bodysize, :birthday)
+      params.require(:user_datum).permit(:firstname, :lastname, :sex, :weight, :bodysize, :birthday, :photo)
     end
 end
