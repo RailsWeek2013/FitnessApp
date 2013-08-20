@@ -1,4 +1,5 @@
 Training::Application.routes.draw do
+  get "supports/user_email"
   resources :user_data
 
   get "user_datas/data_view"
