@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
-	has_many :uebungs
-	#has_many :user_uebungs
-	#has_many :uebungs, :through => :user_uebungs
+	has_many :traininglists
+	has_many :exercises
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable

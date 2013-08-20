@@ -1,0 +1,9 @@
+<h1>Liste meiner Übungen</h1>
+
+<%= render partial:"partials/uebungsliste" %>
+
+<%= alle_uebungen %> |
+<%= link_to 'Neue Übung anlegen', new_exercise_path %> |
+<%= link_to 'Einen Trainingsplan erstellen', new_traininglist_path %> |
+<%= link_to 'Meine Trainingspläne anzeigen', traininglists_path %> |
+<%= link_to 'Ausloggen', destroy_user_session_path, method: :delete %>

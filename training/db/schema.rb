@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130818204319) do
+ActiveRecord::Schema.define(version: 20130820123414) do
 
-  create_table "uebungs", force: true do |t|
-    t.string   "uebung"
+  create_table "exercise_trainiglists", id: false, force: true do |t|
+    t.integer  "exercise_id"
+    t.integer  "traininglist_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "exercises", force: true do |t|
+    t.string   "name"
     t.string   "trainingsart"
     t.integer  "anzset"
     t.integer  "anzwdh"
@@ -22,10 +29,25 @@ ActiveRecord::Schema.define(version: 20130818204319) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.boolean  "auswaehlen"
   end
 
-  create_table "user_uebungs", force: true do |t|
+  create_table "exercises_traininglists", id: false, force: true do |t|
+    t.integer "exercise_id",     null: false
+    t.integer "traininglist_id", null: false
+  end
+
+  create_table "traininglists", force: true do |t|
+    t.string   "name"
+    t.string   "trainingsart"
+    t.string   "anzset"
+    t.integer  "anzwdh"
+    t.text     "beschreibung"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  create_table "user_exercises", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

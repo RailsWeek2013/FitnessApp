@@ -1,0 +1,31 @@
+<%= form_for(@traininglist) do |f| %>
+  <% if @traininglist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@exercise.errors.count, "error") %> prohibited this exercise from being saved:</h2>
+
+      <ul>
+      <% @traininglist.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+  <% Exercise.all.each do |exe| %>
+    <%= f.fields_for(:exercises, exe) do |ef| %>
+      <%= ef.check_box :id %>
+      <%= ef.label exe.name %>
+      <%= link_to 'zur Übung', @exercise %>
+      <br \>
+    <% end %>
+  <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

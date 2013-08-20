@@ -1,9 +1,9 @@
 
-<%= link_to 'Übung erstellen', new_uebung_path %>
-<% @uebungs.each do |uebung| %>
-<%=check_box_tag(:uebung) %>
-<%= label_tag(:uebung, uebung.uebung) %>
-<%= link_to 'zur Übung', uebung%>
+<%= link_to 'Übung erstellen', new_exercise_path %>
+<% @uebungs.each do |exercise| %>
+<%=check_box_tag(:exercise) %>
+<%= label_tag(:exercise, exercise.name) %>
+<%= link_to 'zur Übung', exercise%>
 <br \>
 
 <% end %>
