@@ -1,13 +1,13 @@
 <h1>Your Profile</h1>
 
 <hr \>
+<p> Profilbild: <%= image_tag @user_datum.photo(:thumb) %> </p>
 <p> Firstname: <%= @user_datum.firstname %> </p>
 <p> Lastname: <%= @user_datum.lastname %></p>
 <p> Sex: <%= @user_datum.sex %></p>
 <p> Weight: <%= @user_datum.weight %></p>
 <p> Bodysize: <%= @user_datum.bodysize %></p>
 <p> Birthday: <%= @user_datum.birthday %></p>
-<p> Profilbild: <%= @user_datum.photo%> </p>
 <hr \>
 <p> <%= link_to 'Show', @user_datum %> &nbsp &nbsp
     <%= link_to 'Edit', edit_user_datum_path(@user_datum) %>&nbsp &nbsp
