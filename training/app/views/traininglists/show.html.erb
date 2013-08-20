@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @traininglist.name %>
+</p>
+
+
+
+
+<%= link_to 'Back', traininglists_path %> |
+<%= link_to 'Edit', edit_traininglist_path(@traininglist) %> |
+<%= link_to 'Destroy', @traininglist, method: :delete, data: { confirm: 'Are you sure?' } %>

@@ -1,0 +1,31 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Trainingsart</th>
+      <th>Anzahl Set</th>
+      <th>Anzahl Wiederholung</th>
+      <th>Beschreibung</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @traininglists.each do |traininglist| %>
+      <tr>
+        <td><%= traininglist.name %></td>
+        <td><%= traininglist.trainingsart %></td>
+        <td><%= traininglist.anzset %></td>
+        <td><%= traininglist.anzwdh %></td>
+        <td><%= traininglist.beschreibung %></td>
+        <td><%= link_to 'Show', traininglist %></td>
+        <td><%= link_to 'Edit', edit_traininglist_path(traininglist) %></td>
+        <td><%= link_to 'Destroy',traininglist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div><%= link_to 'Back', own_exercises_path %></div>

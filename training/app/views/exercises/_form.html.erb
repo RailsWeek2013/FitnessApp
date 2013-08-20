@@ -1,0 +1,37 @@
+<%= form_for(@exercise) do |f| %>
+  <% if @exercise.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@exercise.errors.count, "error") %> prohibited this exercise from being saved:</h2>
+
+      <ul>
+      <% @exercise.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :trainingsart %><br>
+    <%= f.text_field :trainingsart %>
+  </div>
+  <div class="field">
+    <%= f.label :anzset %><br>
+    <%= f.number_field :anzset %>
+  </div>
+  <div class="field">
+    <%= f.label :anzwdh %><br>
+    <%= f.number_field :anzwdh %>
+  </div>
+  <div class="field">
+    <%= f.label :beschreibung %><br>
+    <%= f.text_area :beschreibung %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

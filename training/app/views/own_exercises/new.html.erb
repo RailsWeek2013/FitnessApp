@@ -1,0 +1,15 @@
+<h1>Liste der Übungen</h1>
+<ul>
+<%= form_for(:exercise) do |u|%>
+	<% @exercises.each do |uebung| %>
+		<%= u.check_box :auswehlen %>
+		<%= u.label(:exercise, uebung.name) %>
+		<%= link_to 'zur Übung', exercise %>
+		<br \>
+	<% end %>	
+  	<div><%= u.submit 'Zum Trainingsplan hinzufügen' %></div>
+<% end -%>
+</ul>
+<%= link_to 'Eigene Übung anlegen', new_exercise_path %>
+<%= link_to 'Meine Übungen', own_exercises_path%>
+<%= link_to 'Ausloggen', destroy_user_session_path, method: :delete %>

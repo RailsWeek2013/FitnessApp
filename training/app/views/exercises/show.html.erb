@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @exercise.name %>
+</p>
+
+<p>
+  <strong>Trainingsart:</strong>
+  <%= @exercise.trainingsart %>
+</p>
+
+<p>
+  <strong>Anzset:</strong>
+  <%= @exercise.anzset %>
+</p>exercise
+
+<p>
+  <strong>Anzwdh:</strong>
+  <%= @exercise.anzwdh %>
+</p>
+
+<p>
+  <strong>Beschreibung:</strong>
+  <%= @exercise.beschreibung %>
+</p>
+
+<%= link_to 'Edit', edit_exercise_path(@exercise) %> |
+<%= link_to 'Back', exercises_path %> |
+<%= link_to 'Destroy', @exercise, method: :delete, data: { confirm: 'Are you sure?' } %>
