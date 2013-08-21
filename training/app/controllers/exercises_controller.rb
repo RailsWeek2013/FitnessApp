@@ -5,7 +5,7 @@ class ExercisesController < ApplicationController
   # GET /exercises
   # GET /exercises.json
   def index
-    @exercises = Exercise.all
+    @exercises = Exercise.where(published: true).all
     @user_exercises = current_user.exercises.all
     
   end
@@ -48,6 +48,9 @@ class ExercisesController < ApplicationController
   # PATCH/PUT /exercises/1
   # PATCH/PUT /exercises/1.json
   def update
+    #puts params
+    #params[:exercise][:published] = params[:exercise][:published] == "true" ? true : false
+    #puts  params
     respond_to do |format|
       if @exercise.update(exercise_params)
         format.html { redirect_to @exercise, notice: 'Uebung was successfully updated.' }
@@ -79,6 +82,6 @@ class ExercisesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def exercise_params
-      params.require(:exercise).permit(:name, :trainingsart, :anzset, :anzwdh, :beschreibung, :muskelgruppe)
+      params.require(:exercise).permit(:name, :trainingsart, :anzset, :anzwdh, :beschreibung, :muskelgruppe, :published)
     end
 end

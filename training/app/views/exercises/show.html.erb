@@ -6,14 +6,9 @@
 </p>
 
 <p>
-  <strong>Trainingsart:</strong>
-  <%= @exercise.trainingsart %>
-</p>
-
-<p>
   <strong>Anzset:</strong>
   <%= @exercise.anzset %>
-</p>exercise
+</p>
 
 <p>
   <strong>Anzwdh:</strong>
@@ -27,6 +22,8 @@
   <strong>Beschreibung:</strong>
   <%= @exercise.beschreibung %>
 </p>
+
+
 
 <%= link_to 'Edit', edit_exercise_path(@exercise) %> |
 <%= link_to 'Back', exercises_path %> |
