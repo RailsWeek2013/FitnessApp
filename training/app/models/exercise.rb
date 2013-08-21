@@ -3,4 +3,8 @@ class Exercise < ActiveRecord::Base
 	belongs_to :user 
 
 	validates :name, presence: true
+	validates :muskelgruppe, presence: true
+	validates :anzwdh, presence: true
+	validates :anzset, presence: true
+	
 end
