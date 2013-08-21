@@ -1,5 +1,5 @@
 puts "Seeding database..."
-Exercise.create name: 'dasf', trainingsart: 'Kraft'
-Exercise.create name: 'Situasfp', trainingsart: 'Kraft'
-Exercise.create name: 'Situp', trainingsart: 'Kraft'
-Exercise.create name: 'Situaap', trainingsart: 'Kraft'
+Exercise.create name: 'Situp' 
+Exercise.create name: 'Bench Press'
+Exercise.create name: 'Klimmzüge'
+Exercise.create name: 'Chest Press'
