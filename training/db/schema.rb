@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 20130821121423) do
   create_table "exercises", force: true do |t|
     t.string   "name"
     t.string   "trainingsart"
-    t.integer  "anzset"
-    t.integer  "anzwdh"
+    t.integer  "anzset",  default: 3
+    t.integer  "anzwdh",  default: 10
     t.text     "beschreibung"
     t.datetime "created_at"
     t.datetime "updated_at"
