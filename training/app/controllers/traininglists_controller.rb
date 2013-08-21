@@ -4,7 +4,7 @@ class TraininglistsController < ApplicationController
 
   def index
   	@traininglists = current_user.traininglists.all
-    @exercises = Exercise.all
+    @exercises = Exercise.where(published: true).all
   end
 
   def new
