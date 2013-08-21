@@ -4,7 +4,16 @@
   <strong>Name:</strong>
   <%= @traininglist.name %>
 </p>
-
+<p>
+  <strong>Trainingsart:</strong>
+  <%= @traininglist.trainingsart %>
+</p>
+<p>
+  <strong>Uebungen:</strong>
+  <% @traininglist.exercises.each do |exe| %>
+  <%= exe.name %>
+  <% end %>
+</p>
 
 
 
