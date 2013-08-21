@@ -1,3 +1,4 @@
+ <div>
  <%= form_for(@traininglist) do |f| %>
  	<% if @traininglist.errors.any? %>
  		<div id="error_explanation">
@@ -19,16 +20,24 @@
  	<div class="field">
  	<% Exercise.all.each do |exe| %>
  		<%= f.fields_for(:exercises, exe) do |ef| %>
- 			<%= ef.check_box :id %>
+ 			<%= ef.check_box :checked, checked: (@traininglist.exercises.include?(exe) == 1)  %>
  			<%= ef.label exe.name %>
  			<%= link_to 'zur Übung', @exercise %>
  			<br \>
  		<% end %>
  	<% end %>
  	</div>
-
+	
+	<div class="field">
+	<div>
+  	<%= f.select :trainingsart, options_for_select(["Kraft", "Ausdauer"]) %>
+	</div>
+	</div>
 
  	<div class="actions">
  	<%= f.submit %>
  	</div>
  <% end %>
+</div>
+
+</div>

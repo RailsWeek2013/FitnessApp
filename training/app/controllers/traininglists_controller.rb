@@ -29,7 +29,7 @@ class TraininglistsController < ApplicationController
       if @traininglist.save
 
         params[:traininglist][:exercises_attributes] = @ea
-        @ea.each do |key, value| @traininglist.exercises << Exercise.find(value[:id]) end
+        @ea.each do |key, value| @traininglist.exercises << Exercise.find(value[:id]) if value[:checked] == "1" end
         format.html { redirect_to @traininglist, notice: 'Exercise was successfully created.' }
         format.json { render action: 'show', status: :created, location: @traininglist }
       else
@@ -42,8 +42,16 @@ class TraininglistsController < ApplicationController
   end
 
   def update
+    @ea = params[:traininglist][:exercises_attributes]
+    params[:traininglist][:exercises_attributes] = nil
+    @traininglist = current_user.traininglists.find(params[:id])    
     respond_to do |format|
       if @traininglist.update(traininglist_params)
+
+        params[:traininglist][:exercises_attributes] = @ea
+        @traininglist.exercises.delete_all
+        @ea.each do |key, value| @traininglist.exercises << Exercise.find(value[:id]) if value[:checked] == "1" end
+          
         format.html { redirect_to @traininglist, notice: 'Traininglist was successfully updated.' }
         format.json { head :no_content }
       else
@@ -72,6 +80,6 @@ class TraininglistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def traininglist_params
-      params.require(:traininglist).permit(:name, :trainingsart, :anzset, :anzwdh, :beschreibung,  {:exercise_ids => []} )
+      params.require(:traininglist).permit(:name, :trainingsart, :anzset, :anzwdh, :beschreibung,  exercises_attributes: [:id, :name] )
     end
 end

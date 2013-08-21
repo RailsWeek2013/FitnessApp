@@ -28,9 +28,14 @@
     <%= f.number_field :anzwdh %>
   </div>
   <div class="field">
+    <%= f.label :muskelgruppe  %><br>
+    <%= f.text_field :muskelgruppe %>
+  </div>
+  <div class="field">
     <%= f.label :beschreibung %><br>
     <%= f.text_area :beschreibung %>
   </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
