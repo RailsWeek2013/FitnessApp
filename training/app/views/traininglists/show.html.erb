@@ -1,22 +1,150 @@
-<p id="notice"><%= notice %></p>
 
+
+
+ <h1> <%= @traininglist.name %> </h1>
 <p>
-  <strong>Name:</strong>
-  <%= @traininglist.name %>
-</p>
-<p>
+	(
   <strong>Trainingsart:</strong>
   <%= @traininglist.trainingsart %>
-</p>
-<p>
-  <strong>Uebungen:</strong>
-  <% @traininglist.exercises.each do |exe| %>
-  <%= exe.name %>
-  <% end %>
+    )
 </p>
 
 
 
+
+
+
+
+<div class="tag1">
+	<h1> Tag 1 </h1>
+     <table border="1" cellspacing="2" cellpadding="2">
+      <tr>
+        <th>Uebung</th>
+        <th>Anzset</th>
+        <th>Anzwdh</th>
+      </tr>
+
+      
+     <% @traininglist.exercises.each do |exe| %>
+     <%if exe.muskelgruppe == "Brust" || exe.muskelgruppe == "Triceps" || exe.muskelgruppe == "Bauch" %>
+      <% if @traininglist.trainingsart == "Ausdauer" %>
+
+       <tr>
+          <td> <%= exe.name %> </td>
+          <td> <%= exe.anzset + 1 %> </td>
+          <td> <%= (exe.anzwdh * 1.4).to_i  %> </td>
+       </tr>
+       <% else %>
+        <tr>
+          <td> <%= exe.name %> </td>
+          <td> <%= exe.anzset %> </td>
+          <td> <%= exe.anzwdh  %> </td>
+       </tr>
+
+      <% end %>
+     <% end %>
+     <% end %>
+    </table>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="tag2">
+	<h1> Tag 2 </h1>
+   <table border="1" cellspacing="3" cellpadding="3">
+      <tr>
+        <th>Uebung</th>
+        <th>Anzset</th>
+        <th>Anzwdh</th>
+      </tr>
+
+      
+     <% @traininglist.exercises.each do |exe| %>
+         <%if exe.muskelgruppe == "Beine" || exe.muskelgruppe == "Schulter" %>
+      <% if @traininglist.trainingsart == "Ausdauer" %>
+
+       <tr>
+          <td> <%= exe.name %> </td>
+          <td> <%= exe.anzset + 1 %> </td>
+          <td> <%= (exe.anzwdh * 1.4).to_i  %> </td>
+       </tr>
+       <% else %>
+        <tr>
+          <td> <%= exe.name %> </td>
+          <td> <%= exe.anzset %> </td>
+          <td> <%= exe.anzwdh  %> </td>
+       </tr>
+       
+      <% end %>
+     <% end %>
+     <% end %>
+    </table>
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="tag3">
+	<h1> Tag 3 </h1>
+  <table border="1" cellspacing="3" cellpadding="3">
+      <tr>
+        <th>Uebung</th>
+        <th>Anzset</th>
+        <th>Anzwdh</th>
+      </tr>
+
+      
+     <% @traininglist.exercises.each do |exe| %>
+        <%if exe.muskelgruppe == "Ruecken" || exe.muskelgruppe == "Bizeps" || exe.muskelgruppe == "Bauch" %>
+      <% if @traininglist.trainingsart == "Ausdauer" %>
+
+       <tr>
+          <td> <%= exe.name %> </td>
+          <td> <%= exe.anzset + 1 %> </td>
+          <td> <%= (exe.anzwdh * 1.4).to_i  %> </td>
+       </tr>
+       <% else %>
+        <tr>
+          <td> <%= exe.name %> </td>
+          <td> <%= exe.anzset %> </td>
+          <td> <%= exe.anzwdh  %> </td>
+       </tr>
+       
+      <% end %>
+     <% end %>
+     <% end %>
+    </table>
+
+</div>
+
+
+
+
+
+
+<div class="umbruch">
+</div>
 <%= link_to 'Back', traininglists_path %> |
 <%= link_to 'Edit', edit_traininglist_path(@traininglist) %> |
 <%= link_to 'Destroy', @traininglist, method: :delete, data: { confirm: 'Are you sure?' } %>

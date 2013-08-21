@@ -1,6 +1,6 @@
 class TraininglistsController < ApplicationController
 	before_filter :authenticate_user!
-  
+ 
 
   def index
   	@traininglists = current_user.traininglists.all
