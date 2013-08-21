@@ -1,10 +1,22 @@
 <h1>Liste meiner Übungen</h1>
 
 <%= render partial:"partials/uebungsliste" %>
-
-<%= all_exercises %> |
-<%= link_to 'Neue Übung anlegen', new_exercise_path %> |
-<%= link_to 'Einen Trainingsplan erstellen', new_traininglist_path %> |
-<%= link_to 'Meine Trainingspläne anzeigen', traininglists_path %> |
-<%= link_to 'Eigene Daten verwalten', user_data_path %> |
+<div class="button">
+<%= all_exercises %> 
+</div> |
+<div class="button">
+<%= link_to 'Neue Übung anlegen', new_exercise_path %>
+</div>
+ |
+ <div class="button">
+<%= link_to 'Einen Trainingsplan erstellen', new_traininglist_path %>
+</div> |
+<div class="button">
+<%= link_to 'Meine Trainingspläne anzeigen', traininglists_path %> 
+</div> |
+<div class="button">
+<%= link_to 'Eigene Daten verwalten', user_data_path %>
+</div> |
+<div class="button">
 <%= link_to 'Ausloggen', destroy_user_session_path, method: :delete %>
+</div>

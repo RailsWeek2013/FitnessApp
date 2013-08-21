@@ -1,0 +1,28 @@
+.button {
+   background-image: -webkit-linear-gradient(top, rgba(255,255,255,1) 39%,rgba(255,255,255,1) 100%);
+   background-image:    -moz-linear-gradient(top, rgba(255,255,255,1) 39%,rgba(255,255,255,1) 100%);
+   background-image:     -ms-linear-gradient(top, rgba(255,255,255,1) 39%,rgba(255,255,255,1) 100%);
+   background-image:      -o-linear-gradient(top, rgba(255,255,255,1) 39%,rgba(255,255,255,1) 100%);
+   background-image:         linear-gradient(top, rgba(255,255,255,1) 39%,rgba(255,255,255,1) 100%);
+   border: solid 2px rgba(0,0,0,1);
+   -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+           border-radius: 8px;
+   padding: 2px;
+   display: inline-block;
+   font-size: 14px;
+   line-height: 22px;
+   color: rgba(0,0,0,1);
+}
+.button:hover {
+   background-image: -webkit-linear-gradient(top, rgba(196,133,196,1) 39%,rgba(79,198,214,1) 100%);
+   background-image:    -moz-linear-gradient(top, rgba(196,133,196,1) 39%,rgba(79,198,214,1) 100%);
+   background-image:     -ms-linear-gradient(top, rgba(196,133,196,1) 39%,rgba(79,198,214,1) 100%);
+   background-image:      -o-linear-gradient(top, rgba(196,133,196,1) 39%,rgba(79,198,214,1) 100%);
+   background-image:         linear-gradient(top, rgba(196,133,196,1) 39%,rgba(79,198,214,1) 100%);
+   -webkit-box-shadow: -1px 0px 2px 0px rgba(0,0,0,1);
+      -moz-box-shadow: -1px 0px 2px 0px rgba(0,0,0,1);
+           box-shadow: -1px 0px 2px 0px rgba(0,0,0,1);
+   font-size: 19px;
+   line-height: 29px;
+}
