@@ -1,6 +1,9 @@
+
 <h1>Your Profile</h1>
 
+<div class="usDataIn">
 <hr \>
+
 <p> Profilbild: <%= image_tag @user_datum.photo(:thumb) %> </p>
 <p> Firstname: <%= @user_datum.firstname %> </p>
 <p> Lastname: <%= @user_datum.lastname %></p>
@@ -9,10 +12,18 @@
 <p> Bodysize: <%= @user_datum.bodysize %></p>
 <p> Birthday: <%= @user_datum.birthday %></p>
 <hr \>
+<<<<<<< HEAD
+</div>
+<p> <%= link_to 'Show', @user_datum %> &nbsp &nbsp
+    <%= link_to 'Edit', edit_user_datum_path(@user_datum) %>&nbsp &nbsp
+    <%= link_to 'Destroy', @user_datum, method: :delete, data: { confirm: 'Are you sure?' } %>&nbsp &nbsp
+    <%= link_to 'Back to homepage', own_exercises_path %>
+=======
 <p> <%#= link_to 'Show', @user_datum %> &nbsp  &nbsp
     <%= link_to 'Bearbeiten', edit_user_datum_path(@user_datum) %>&nbsp | &nbsp
     <%= link_to 'Löschen', @user_datum, method: :delete, data: { confirm: 'Bist du dir sicher?' } %>&nbsp | &nbsp
     <%= link_to 'Zurück zur Hauptseite', own_exercises_path %>
+>>>>>>> a0cdfe6ba01ff3397046c3a53a769f55a542936a
     </p>
 
 
