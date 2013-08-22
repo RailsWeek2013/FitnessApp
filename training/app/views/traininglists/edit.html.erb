@@ -16,7 +16,7 @@
   <%= f.text_field :name %>
 </div>
 <div class="field">
-  <% Exercise.all.each do |exe| %>
+  <% @exercises.each do |exe| %>
   <%= f.fields_for(:exercises, exe) do |ef| %>
     <%= ef.check_box :checked, checked: (@traininglist.exercises.include?(exe) == 1)  %>
   <%= ef.label exe.name %>

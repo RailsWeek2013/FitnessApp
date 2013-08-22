@@ -9,7 +9,7 @@ class TraininglistsController < ApplicationController
 
   def new
     @traininglist = current_user.traininglists.new
-    @traininglist.exercises
+    set_exercises
   end
 
   def show
@@ -18,6 +18,7 @@ class TraininglistsController < ApplicationController
 
   def edit
     set_traininglist
+    set_exercises
   end
 
   def create
@@ -33,6 +34,7 @@ class TraininglistsController < ApplicationController
         format.html { redirect_to @traininglist, notice: 'Exercise was successfully created.' }
         format.json { render action: 'show', status: :created, location: @traininglist }
       else
+        set_exercises
         format.html { render action: 'new' }
         format.json { render json: @traininglist.errors, status: :unprocessable_entity }
       end
@@ -55,6 +57,7 @@ class TraininglistsController < ApplicationController
         format.html { redirect_to @traininglist, notice: 'Traininglist was successfully updated.' }
         format.json { head :no_content }
       else
+        set_exercises
         format.html { render action: 'edit' }
         format.json { render json: @traininglist.errors, status: :unprocessable_entity }
       end
@@ -81,5 +84,11 @@ class TraininglistsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def traininglist_params
       params.require(:traininglist).permit(:name, :trainingsart, :anzset, :anzwdh, :beschreibung,  exercises_attributes: [:id, :name] )
+    end
+
+    def set_exercises
+        @exercises = Exercise.where(published: true).all
+        @exercises += current_user.exercises
+        @exercises.uniq{|x| x.id}     
     end
 end
