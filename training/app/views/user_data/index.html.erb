@@ -1,22 +1,27 @@
 
 <h1>Your Profile</h1>
 
-<div class="usDataIn">
-<hr \>
 
-<p> Profilbild: <%= image_tag @user_datum.photo(:thumb) %> </p>
-<!--<p> Username: <%= @user_datum.user.username %> </p> -->
-<p> Firstname: <%= @user_datum.firstname %> </p>
-<p> Lastname: <%= @user_datum.lastname %></p>
-<p> Sex: <%= @user_datum.sex %></p>
-<p> Weight: <%= @user_datum.weight %></p>
-<p> Bodysize: <%= @user_datum.bodysize %></p>
-<p> Birthday: <%= @user_datum.birthday %></p>
-<hr \>
+<div class="usDataOut" >
+	<div class="usDataIn">
+		<hr \>
+
+
+		<p> Firstname: <%= @user_datum.firstname %> </p>
+		<p> Lastname: <%= @user_datum.lastname %></p>
+		<p> Sex: <%= @user_datum.sex %></p>
+		<p> Weight: <%= @user_datum.weight %></p>
+		<p> Bodysize: <%= @user_datum.bodysize %></p>
+		<p> Birthday: <%= @user_datum.birthday %></p>
+
+	</div>
+
+<p class="usDataPic">  <%= image_tag @user_datum.photo(:medium) %> </p>
+
 
 </div>
 
-<p> <%#= link_to 'Show', @user_datum %> &nbsp  &nbsp
+<p class="usDataNav"> <%#= link_to 'Show', @user_datum %> &nbsp  &nbsp
     <%= link_to 'Bearbeiten', edit_user_datum_path(@user_datum) %>&nbsp | &nbsp
     <%= link_to 'Löschen', @user_datum, method: :delete, data: { confirm: 'Bist du dir sicher?' } %>&nbsp | &nbsp
     <%= link_to 'Zurück zur Hauptseite', own_exercises_path %>

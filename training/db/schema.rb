@@ -11,7 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130822081139) do
+
+ActiveRecord::Schema.define(version: 20130821121423) do
+
 
   create_table "exercise_trainiglists", id: false, force: true do |t|
     t.integer  "exercise_id"
