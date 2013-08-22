@@ -1,5 +1,26 @@
 // Place all the styles related to the user_data controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.usDataIn {background-color: black ; width: 600px ;
-color: yellow}
+
+
+.usDataIn {
+background-color: black ;
+width: 600px ;
+height: 320px;
+color: yellow;
+float: left;
+}
+
+.usDataPic {
+	float: left;
+    margin-left: 100px
+
+}
+
+.usDataNav {
+	clear: both;
+}
+
+.usDataOut {
+	align: center;
+}
