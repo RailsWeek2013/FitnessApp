@@ -16,12 +16,12 @@
         <td><%= traininglist.name %></td>
         <td><%= traininglist.trainingsart %></td>
         
-        <td><%= link_to 'Show', traininglist %></td>
-        <td><%= link_to 'Edit', edit_traininglist_path(traininglist) %></td>
-        <td><%= link_to 'Destroy',traininglist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Anzeigen', traininglist %></td>
+        <td><%= link_to 'Bearbeiten', edit_traininglist_path(traininglist) %></td>
+        <td><%= link_to 'Loeschen',traininglist, method: :delete, data: { confirm: 'Bist du dir sicher?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<div><%= link_to 'Back', own_exercises_path %></div>
+<div><%= link_to 'Zurueck', own_exercises_path %></div>
