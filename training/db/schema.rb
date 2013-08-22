@@ -11,9 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20130821121423) do
-
 
   create_table "exercise_trainiglists", id: false, force: true do |t|
     t.integer  "exercise_id"
@@ -25,7 +23,7 @@ ActiveRecord::Schema.define(version: 20130821121423) do
   create_table "exercises", force: true do |t|
     t.string   "name"
     t.string   "trainingsart"
-    t.integer  "anzset",       default: 3
+    t.integer  "anzset"
     t.integer  "anzwdh"
     t.text     "beschreibung"
     t.datetime "created_at"
@@ -85,7 +83,6 @@ ActiveRecord::Schema.define(version: 20130821121423) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "username"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

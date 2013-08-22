@@ -1,7 +1,7 @@
 class CreateExercises < ActiveRecord::Migration
   def change
     create_table :exercises do |t|
-      t.string :name
+      t.string :name ,      :unique => true
       t.string :trainingsart
       t.integer :anzset
       t.integer :anzwdh

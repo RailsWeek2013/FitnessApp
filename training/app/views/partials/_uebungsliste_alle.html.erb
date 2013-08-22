@@ -2,7 +2,6 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Trainingsart</th>
       <th>Anzahl Set</th>
       <th>Anzahl Wiederholung</th>
       <th>Beschreibung</th>
@@ -16,11 +15,10 @@
     <% @exercises.each do |exercise| %>
       <tr>
         <td><%= exercise.name %></td>
-        <td><%= exercise.trainingsart %></td>
         <td><%= exercise.anzset %></td>
         <td><%= exercise.anzwdh %></td>
         <td><%= exercise.beschreibung %></td>
-        <td><%= link_to 'Show', exercise %></td>
+        <td><%= link_to 'Anzeigen', exercise %></td>
       </tr>
     <% end %>
   </tbody>
