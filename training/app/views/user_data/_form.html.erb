@@ -12,36 +12,36 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :firstname %><br>
+    <%= f.label :Vorname %><br>
     <%= f.text_field :firstname %>
   </div>
   <div class="field">
-    <%= f.label :lastname %><br>
+    <%= f.label :Nachname %><br>
     <%= f.text_field :lastname %>
   </div>
   <div class="field">
-    <%= f.label :sex %><br>
-    <%= f.text_field :sex %>
+    <%= f.label :Geschlecht %><br>
+    <%= f.select :sex, options_for_select(["Männlich", "Weiblich"]) %>
   </div>
   <div class="field">
-    <%= f.label :weight %><br>
+    <%= f.label :Körpergewicht %><br>
     <%= f.text_field :weight %>
     in kg
   </div>
   <div class="field">
-    <%= f.label :bodysize %><br>
+    <%= f.label :Körpergröße %><br>
     <%= f.text_field :bodysize %>
     in cm
   </div>
   <div class="field">
-    <%= f.label :birthday %><br>
+    <%= f.label :Geburtsdatum %><br>
     <%= f.date_select :birthday, :start_year => Date.current.year, :end_year => 1920 %>
   </div>
   <div>
-  	<%= f.label :photo %><br>
+  	<%= f.label :Foto %><br>
   	<%= f.file_field :photo %>
   </div>
-  <div class="actions">
+  <p><div class="actions">
     <%= f.submit %>
-  </div>
+  </div></p>
 <% end %>
