@@ -4,8 +4,8 @@ class CreateUserData < ActiveRecord::Migration
       t.string :firstname
       t.string :lastname
       t.string :sex
-      t.float :weight
-      t.float :bodysize
+      t.float :weight, default: 0
+      t.float :bodysize, default: 0
       t.date :birthday
 
       t.timestamps
