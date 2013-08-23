@@ -1,28 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @exercise.name %>
-</p>
-
-<p>
-  <strong>Anzset:</strong>
-  <%= @exercise.anzset %>
-</p>
-
-<p>
-  <strong>Anzwdh:</strong>
-  <%= @exercise.anzwdh %>
-</p>
-<p>
-  <strong>Muskelgruppe:</strong>
-  <%= @exercise.muskelgruppe %>
-</p>
-<p>
-  <strong>Beschreibung:</strong>
-  <%= @exercise.beschreibung %>
-</p>
-
+<%= render 'partials/show_exercises' %>
 
 
 <%= link_to 'Bearbeiten', edit_exercise_path(@exercise) %> |
